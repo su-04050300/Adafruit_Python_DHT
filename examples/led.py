@@ -1,10 +1,9 @@
+#!/usr/bin/python
 import requests
 import socket
 import threading
 import logging
 import RPi.GPIO as GPIO
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(17,GPIO.OUT)
 # change this to the values from MCS web console
 DEVICE_INFO = {
     'device_id' : 'DlaK77xV',
@@ -64,15 +63,15 @@ def waitAndExecuteCommand(commandChannel):
 
 def setupLED():
     # on LinkIt Smart 7699, pin 44 is the Wi-Fi LED.
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(17,GPIO.OUT)
+	GPIO.setmode(GPIO.BCM)
+	GPIO.setup(17,GPIO.OUT)
 
 def setLED(state):
     # Note the LED is "reversed" to the pin's GPIO status.
     # So we reverse it here.
 	if state:
 		LEDon=GPIO.output(17,1)
-	else
+	else:
 		LEDon=GPIO.output(17,0)
 
 
