@@ -77,8 +77,6 @@ while 1:
 		payload = {"datapoints":[{"dataChnId":"Humidity","values":{"value":humidity}},
 			{"dataChnId":"Temperature","values":{"value":temperature}},
 			{"dataChnId":"switchstatus","values":{"value":switch}}]}
-		#payload = {"datapoints":[{"dataChnId":"Humidity","values":{"value":humidity}},
- 			#{"dataChnId":"Temperature","values":{"value":temperature}}]}
 		post_to_mcs(payload)
 
 		time.sleep(1)
